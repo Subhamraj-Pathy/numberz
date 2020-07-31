@@ -21,7 +21,7 @@ const Navbar = () => {
                 <Button color="inherit"><span className='BtnText'><Link className='links' to="/starships">Starships</Link></span></Button>
             </div>
             <div className='menu'><MenuIcon fontSize='large' color='error' onClick={() => setShowMenuIcon(!showMenuIcon)} /></div>
-            <div id="mySidenav" class="sidenav" style={ !showMenuIcon ? {width: '0px'} : {width: '250px'}  }>
+            <div id="mySidenav" className="sidenav" style={ !showMenuIcon ? {width: '0px'} : {width: '250px'}  }>
                 <div className='menuClose'><CloseIcon fontSize='large' color='error' onClick={() => setShowMenuIcon(!showMenuIcon)} /></div>
                 <Button color="inherit"><span className='BtnText'><Link onClick={() => setShowMenuIcon(!showMenuIcon)} className='links' to="/people">People</Link></span></Button>
                 <Button color="inherit"><span className='BtnText'><Link onClick={() => setShowMenuIcon(!showMenuIcon)} className='links' to="/planets">Planets</Link></span></Button>
