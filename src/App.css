@@ -6,6 +6,11 @@
   height: 100vh;
 }
 
+.viewPort {
+  width: 100%;
+  height: calc(100vh - 90px);
+}
+
 /* NAVBAR */
 
 
@@ -27,8 +32,12 @@
   margin-right: 5vw;
 }
 
-.BtnText {
+.links {
+  text-decoration: none;
   color: rgb(219, 223, 5);
+}
+
+.BtnText {
   font-size: 20px;
   text-transform: capitalize;
   font-family: 'Concert One', cursive;
@@ -70,3 +79,23 @@
     padding-top: 60px;
   }
 }
+
+/* Home screen */
+
+.homeScreenContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeScreenContainer p {
+  margin-top: 50px;
+  color: yellow;
+  font-size: 50px;
+  text-shadow: 5px 5px 50px blue;
+  font-family: 'Concert One', cursive;
+  text-align: center;
+  line-height: 60px;
+}
+

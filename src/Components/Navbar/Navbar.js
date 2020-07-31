@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import logo from '../../Assets/logo.png'
+import { Link, BrowserRouter as Router } from 'react-router-dom'
 
 
 import Button from '@material-ui/core/Button';
@@ -9,25 +10,25 @@ import CloseIcon from '@material-ui/icons/Close';
 const Navbar = () => {
     const [showMenuIcon, setShowMenuIcon] = useState(false)
     return (
-        <div className='navBarContainer'>
-            <img className='logo' src={logo} />
+            <div className='navBarContainer'>
+            <Link to="/"><img className='logo' src={logo} /></Link>
             <div className='navLinks'>
-                <Button color="inherit"><span className='BtnText'>People</span></Button>
-                <Button color="inherit"><span className='BtnText'>Planets</span></Button>
-                <Button color="inherit"><span className='BtnText'>Films</span></Button>
-                <Button color="inherit"><span className='BtnText'>Species</span></Button>
-                <Button color="inherit"><span className='BtnText'>Vehicles</span></Button>
-                <Button color="inherit"><span className='BtnText'>Starships</span></Button>
+                <Button color="inherit"><span className='BtnText'><Link className='links' to="/people">People</Link></span></Button>
+                <Button color="inherit"><span className='BtnText'><Link className='links' to="/planets">Planets</Link></span></Button>
+                <Button color="inherit"><span className='BtnText'><Link className='links' to="/films">Films</Link></span></Button>
+                <Button color="inherit"><span className='BtnText'><Link className='links' to="/species">Species</Link></span></Button>
+                <Button color="inherit"><span className='BtnText'><Link className='links' to="/vehicles">Vehicles</Link></span></Button>
+                <Button color="inherit"><span className='BtnText'><Link className='links' to="/starships">Starships</Link></span></Button>
             </div>
             <div className='menu'><MenuIcon fontSize='large' color='error' onClick={() => setShowMenuIcon(!showMenuIcon)} /></div>
             <div id="mySidenav" class="sidenav" style={ !showMenuIcon ? {width: '0px'} : {width: '250px'}  }>
                 <div className='menuClose'><CloseIcon fontSize='large' color='error' onClick={() => setShowMenuIcon(!showMenuIcon)} /></div>
-                <Button color="inherit"><span className='BtnText'>People</span></Button>
-                <Button color="inherit"><span className='BtnText'>Planets</span></Button>
-                <Button color="inherit"><span className='BtnText'>Films</span></Button>
-                <Button color="inherit"><span className='BtnText'>Species</span></Button>
-                <Button color="inherit"><span className='BtnText'>Vehicles</span></Button>
-                <Button color="inherit"><span className='BtnText'>Starships</span></Button>
+                <Button color="inherit"><span className='BtnText'><Link onClick={() => setShowMenuIcon(!showMenuIcon)} className='links' to="/people">People</Link></span></Button>
+                <Button color="inherit"><span className='BtnText'><Link onClick={() => setShowMenuIcon(!showMenuIcon)} className='links' to="/planets">Planets</Link></span></Button>
+                <Button color="inherit"><span className='BtnText'><Link onClick={() => setShowMenuIcon(!showMenuIcon)} className='links' to="/films">Films</Link></span></Button>
+                <Button color="inherit"><span className='BtnText'><Link onClick={() => setShowMenuIcon(!showMenuIcon)} className='links' to="/species">Species</Link></span></Button>
+                <Button color="inherit"><span className='BtnText'><Link onClick={() => setShowMenuIcon(!showMenuIcon)} className='links' to="/vehicles">Vehicles</Link></span></Button>
+                <Button color="inherit"><span className='BtnText'><Link onClick={() => setShowMenuIcon(!showMenuIcon)} className='links' to="/starships">Starships</Link></span></Button>
             </div>
         </div>
     );
