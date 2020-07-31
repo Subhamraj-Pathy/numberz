@@ -111,13 +111,13 @@
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  color: aliceblue;
 }
 
 .card {
   margin-top: 10px;
   margin-bottom: 10px;
   width: 400px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,6 +125,7 @@
 
 .cardContent {
   width: 100%;
+  height: 100%;
   background-color: rgba(250, 250, 123, 0.719);
 }
 
@@ -139,4 +140,6 @@
 
 .typography {
   text-transform: capitalize;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

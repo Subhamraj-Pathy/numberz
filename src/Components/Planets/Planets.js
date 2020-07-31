@@ -7,49 +7,50 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-class People extends Component {
-
+class Planets extends Component {
+    
     state = {
-        people: []
+        planets: []
     }
 
     async componentDidMount() {
-        const response = await axios.get('https://swapi.dev/api/people/')
+        const response = await axios.get('https://swapi.dev/api/planets/')
         this.setState({
-            people: response.data.results
+            planets: response.data.results
         })
-        console.log(this.state.people)
+        console.log(this.state.planets)
     }
 
     render() {
         return (
             <div className='peopleContainer'>
                 {
-                    this.state.people.length <= 0 ?
+                    this.state.planets.length <= 0 ?
                         <img src={Loading} />
                         :
                         (
-                            this.state.people.map((person, i) =>
+                            this.state.planets.map((planet, i) =>
                                 <Card key={i} className='card'>
                                     <CardContent className='cardContent'>
                                         <Typography style={{ textAlign: 'center', marginBottom: '20px', textShadow: '1px 1px orangered' }} variant='h4' component='h1'>
-                                            {person.name}
+                                            {planet.name}
                                 </Typography>
                                         <div className='cardContentRowAlign'>
-                                            <Typography className='typography'><b>Birth:</b> {person.birth_year}</Typography>
-                                            <Typography className='typography'><b>Gender:</b> {person.gender}</Typography>
+                                            <Typography className='typography'><b>Climate:</b> {planet.climate}</Typography>
+                                            <Typography className='typography'><b>Diameter:</b> {planet.diameter}</Typography>
                                         </div>
                                         <div className='cardContentRowAlign'>
-                                            <Typography className='typography'><b>Eye Color:</b> {person.eye_color}</Typography>
-                                            <Typography className='typography'><b>Skin Color:</b> {person.skin_color}</Typography>
+                                            <Typography className='typography'><b>Rotation Periodr:</b> {planet.rotation_period}</Typography>
+                                            <Typography className='typography'><b>Orbital Period:</b> {planet.orbital_period}</Typography>
                                         </div>
                                         <div className='cardContentRowAlign'>
-                                            <Typography className='typography'><b>Hair Color:</b> {person.hair_color}</Typography>
-                                            <Typography className='typography'><b>No. Of. Films:</b> {person.films.length}</Typography>
+                                            <Typography className='typography'><b>Gravity:</b> {planet.gravity}</Typography>
                                         </div>
                                         <div className='cardContentRowAlign'>
-                                            <Typography className='typography'><b>Mass:</b> {person.mass}</Typography>
-                                            <Typography className='typography'><b>Height:</b> {person.height}</Typography>
+                                            <Typography className='typography'><b>Terrain:</b> {planet.terrain}</Typography>
+                                        </div>
+                                        <div className='cardContentRowAlign'>
+                                            <Typography className='typography'><b>Population:</b> {planet.population}</Typography>
 
                                         </div>
                                     </CardContent>
@@ -62,4 +63,4 @@ class People extends Component {
     }
 }
 
-export default People;
+export default Planets;

@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Navbar from './Components/Navbar/Navbar'
 import Home from './Components/Home/Home'
 import People from './Components/People/People'
+import Planets from './Components/Planets/Planets'
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
                 </Route>
                 <Route path='/people'>
                     <People />
+                </Route>
+                <Route path='/planets'>
+                    <Planets />
                 </Route>
               </Switch>
         </div>
