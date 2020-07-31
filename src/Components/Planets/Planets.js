@@ -18,7 +18,6 @@ class Planets extends Component {
         this.setState({
             planets: response.data.results
         })
-        console.log(this.state.planets)
     }
 
     render() {
@@ -30,9 +29,9 @@ class Planets extends Component {
                         :
                         (
                             this.state.planets.map((planet, i) =>
-                                <Card key={i} className='card'>
+                                <Card key={i} className='cardPlanet'>
                                     <CardContent className='cardContent'>
-                                        <Typography style={{ textAlign: 'center', marginBottom: '20px', textShadow: '1px 1px orangered' }} variant='h4' component='h1'>
+                                        <Typography style={{ textAlign: 'center', marginBottom: '20px', textShadow: '1px 1px orangered', cursor: 'pointer' }} variant='h4' component='h1'>
                                             {planet.name}
                                 </Typography>
                                         <div className='cardContentRowAlign'>

@@ -18,7 +18,6 @@ class People extends Component {
         this.setState({
             people: response.data.results
         })
-        console.log(this.state.people)
     }
 
     render() {
@@ -30,9 +29,9 @@ class People extends Component {
                         :
                         (
                             this.state.people.map((person, i) =>
-                                <Card key={i} className='card'>
+                                <Card key={i} className='cardPeople'>
                                     <CardContent className='cardContent'>
-                                        <Typography style={{ textAlign: 'center', marginBottom: '20px', textShadow: '1px 1px orangered' }} variant='h4' component='h1'>
+                                        <Typography style={{ textAlign: 'center', marginBottom: '20px', textShadow: '1px 1px orangered', cursor: 'pointer' }} variant='h4' component='h1'>
                                             {person.name}
                                 </Typography>
                                         <div className='cardContentRowAlign'>

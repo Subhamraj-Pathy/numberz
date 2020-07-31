@@ -7,6 +7,7 @@ import Navbar from './Components/Navbar/Navbar'
 import Home from './Components/Home/Home'
 import People from './Components/People/People'
 import Planets from './Components/Planets/Planets'
+import Films from './Components/Films/Films'
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
                 </Route>
                 <Route path='/planets'>
                     <Planets />
+                </Route>
+                <Route path='/films'>
+                    <Films />
                 </Route>
               </Switch>
         </div>
