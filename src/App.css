@@ -11,9 +11,6 @@
   height: calc(100vh - 90px);
 }
 
-/* NAVBAR */
-
-
 .navBarContainer {
   width: 100%;
   height: 90px;
@@ -80,7 +77,6 @@
   }
 }
 
-/* Home screen */
 
 .homeScreenContainer {
   display: flex;
@@ -98,9 +94,6 @@
   text-align: center;
   line-height: 60px;
 }
-
-
-/* People Screen */
 
 .peopleContainer {
   margin-top: 30px;
@@ -137,6 +130,28 @@
   margin-bottom: 10px;
   width: 400px;
   height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .cardFilm {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 400px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.cardSpecies {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 400px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
