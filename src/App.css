@@ -197,3 +197,76 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+.detailsLink {
+  text-decoration: none;
+}
+
+.personDetails {
+  height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.displayImage {
+  width: 300px;
+  border-radius: 10px;
+  border: 1px solid yellow;
+}
+
+.displayDetails {
+  width: 60vw;
+  height: 70vh;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.displayDetailsName {
+  font-size: 50px;
+  color: yellow;
+  text-align: center;
+  text-shadow: 2px 2px red;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.displayDetailsContents {
+  font-size: 20px;
+  margin-left: 20px;
+  color: white;
+  text-shadow: 1px 1px red;
+  text-transform: capitalize;
+  font-family: 'Concert One', cursive;
+}
+
+@media screen and (max-width: 1024px) {
+  .personDetails {
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: scroll;
+  }
+  
+  .displayImage {
+    width: 300px;
+    border-radius: 10px;
+    border: 1px solid yellow;
+  }
+  
+  .displayDetails {
+    width: 90vw;
+    height: 500px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
