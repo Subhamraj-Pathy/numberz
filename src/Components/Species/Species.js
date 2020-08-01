@@ -40,18 +40,6 @@ class Species extends Component {
                                             <Typography className='typography'><b>Classification:</b> {species.classification}</Typography>
                                         </div>
                                         <div className='cardContentRowAlign'>
-                                            <Typography className='typography'><b>Designation:</b> {species.designation}</Typography>
-                                        </div>
-                                        <div className='cardContentRowAlign'>
-                                            <Typography className='typography'><b>Skin Color:</b> {species.skin_colors}</Typography>
-                                        </div>
-                                        <div className='cardContentRowAlign'>
-                                            <Typography className='typography'><b>Hair Color:</b> {species.hair_colors}</Typography>
-                                        </div>
-                                        <div className='cardContentRowAlign'>
-                                            <Typography className='typography'><b>Eye Color:</b> {species.eye_colors}</Typography>
-                                        </div>
-                                        <div className='cardContentRowAlign'>
                                             <Typography className='typography'><b>LifeSpan:</b> {species.average_lifespan}</Typography>
                                         </div>
                                         <div className='cardContentRowAlign'>

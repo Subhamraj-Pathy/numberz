@@ -41,14 +41,8 @@ class Planets extends Component {
                                             <Typography className='typography'><b>Diameter:</b> {planet.diameter}</Typography>
                                         </div>
                                         <div className='cardContentRowAlign'>
-                                            <Typography className='typography'><b>Rotation Periodr:</b> {planet.rotation_period}</Typography>
+                                            <Typography className='typography'><b>Rotation Period:</b> {planet.rotation_period}</Typography>
                                             <Typography className='typography'><b>Orbital Period:</b> {planet.orbital_period}</Typography>
-                                        </div>
-                                        <div className='cardContentRowAlign'>
-                                            <Typography className='typography'><b>Gravity:</b> {planet.gravity}</Typography>
-                                        </div>
-                                        <div className='cardContentRowAlign'>
-                                            <Typography className='typography'><b>Terrain:</b> {planet.terrain}</Typography>
                                         </div>
                                         <div className='cardContentRowAlign'>
                                             <Typography className='typography'><b>Population:</b> {planet.population}</Typography>
