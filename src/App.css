@@ -157,6 +157,16 @@
   align-items: center;
 }
 
+.cardVehicle {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .cardContent {
   width: 100%;
   height: 100%;
