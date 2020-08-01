@@ -10,6 +10,7 @@ import Planets from './Components/Planets/Planets'
 import Films from './Components/Films/Films'
 import Species from './Components/Species/Species'
 import Vehicles from './Components/Vehicles/Vehicles'
+import Starships from './Components/Starships/Starships'
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
                 </Route>
                 <Route path='/vehicles'>
                     <Vehicles />
+                </Route>
+                <Route path='/starships'>
+                    <Starships />
                 </Route>
               </Switch>
         </div>
