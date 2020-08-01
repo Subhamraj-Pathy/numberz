@@ -97,6 +97,16 @@
   line-height: 60px;
 }
 
+.titleHeading {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-size: 50px;
+  color: yellow;
+  text-shadow: 1px 1px 20px red;
+  font-family: 'Concert One', cursive;
+}
+
 .peopleContainer {
   margin-top: 30px;
   margin-left: 5vw;

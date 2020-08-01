@@ -27,23 +27,28 @@ class Films extends Component {
                     this.state.films.length <= 0 ?
                         <img src={Loading} />
                         :
-                        (
-                            this.state.films.map((film, i) =>
-                                <Card key={i} className='cardFilm'>
-                                    <CardContent className='cardContent'>
-                                        <Typography style={{ textAlign: 'center', marginBottom: '20px', textShadow: '1px 1px orangered', cursor: 'pointer' }} variant='h4' component='h1'>
-                                            {film.title}
-                                        </Typography>
-                                        <div className='cardContentRowAlign'>
-                                            <Typography className='typography'><b>Episode:</b> {film.episode_id}</Typography>
-                                        </div>
-                                        <div className='cardContentRowAlign'>
-                                            <Typography className='typography' style={{textAlign: 'justify  '}}>{film.opening_crawl}</Typography>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            )
-                        )
+                        <div>
+                            <div className='titleHeading'>Films</div>
+                            <div className='peopleContainer'>
+                                {
+                                    this.state.films.map((film, i) =>
+                                    <Card key={i} className='cardFilm'>
+                                        <CardContent className='cardContent'>
+                                            <Typography style={{ textAlign: 'center', marginBottom: '20px', textShadow: '1px 1px orangered', cursor: 'pointer' }} variant='h4' component='h1'>
+                                                {film.title}
+                                            </Typography>
+                                            <div className='cardContentRowAlign'>
+                                                <Typography className='typography'><b>Episode:</b> {film.episode_id}</Typography>
+                                            </div>
+                                            <div className='cardContentRowAlign'>
+                                                <Typography className='typography' style={{textAlign: 'justify  '}}>{film.opening_crawl}</Typography>
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                )
+                                }
+                            </div>
+                        </div>
                 }
             </div>
         );

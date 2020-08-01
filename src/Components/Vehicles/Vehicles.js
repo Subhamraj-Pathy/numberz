@@ -28,29 +28,34 @@ class Vehicles extends Component {
                     this.state.vehicles.length <= 0 ?
                         <img src={Loading} />
                         :
-                        (
-                            this.state.vehicles.map((vehicle, i) =>
-                            <Link key={i} className='detailsLink' to={`/detail/vehicles?vehicle=${vehicle.name}`}>
-                                <Card className='cardVehicle'>
-                                    <CardContent className='cardContent'>
-                                        <Typography style={{ textAlign: 'center', marginBottom: '20px', textShadow: '1px 1px orangered', cursor: 'pointer' }} variant='h4' component='h1'>
-                                            {vehicle.name}
-                                        </Typography>
-                                        <div className='cardContentRowAlign'>
-                                            <Typography className='typography'><b>Model:</b> {vehicle.model}</Typography>
-                                        </div>
-                                        <div className='cardContentRowAlign'>
-                                            <Typography className='typography'><b>Manufacturer:</b> {vehicle.manufacturer}</Typography>
-                                        </div>
-                                        <div className='cardContentRowAlign'>
-                                            <Typography className='typography'><b>Cost:</b> {vehicle.cost_in_credits}</Typography>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            </Link>
-                                
-                            )
-                        )
+                        <div>
+                            <div className='titleHeading'>Vehicles</div>
+                            <div className='peopleContainer'>
+                                {
+                                    this.state.vehicles.map((vehicle, i) =>
+                                    <Link key={i} className='detailsLink' to={`/detail/vehicles?vehicle=${vehicle.name}`}>
+                                        <Card className='cardVehicle'>
+                                            <CardContent className='cardContent'>
+                                                <Typography style={{ textAlign: 'center', marginBottom: '20px', textShadow: '1px 1px orangered', cursor: 'pointer' }} variant='h4' component='h1'>
+                                                    {vehicle.name}
+                                                </Typography>
+                                                <div className='cardContentRowAlign'>
+                                                    <Typography className='typography'><b>Model:</b> {vehicle.model}</Typography>
+                                                </div>
+                                                <div className='cardContentRowAlign'>
+                                                    <Typography className='typography'><b>Manufacturer:</b> {vehicle.manufacturer}</Typography>
+                                                </div>
+                                                <div className='cardContentRowAlign'>
+                                                    <Typography className='typography'><b>Cost:</b> {vehicle.cost_in_credits}</Typography>
+                                                </div>
+                                            </CardContent>
+                                        </Card>
+                                    </Link>
+                                        
+                                    )
+                                }
+                            </div>
+                        </div>
                 }
             </div>
         );
