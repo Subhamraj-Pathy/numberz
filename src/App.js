@@ -13,6 +13,7 @@ import Vehicles from './Components/Vehicles/Vehicles'
 import Starships from './Components/Starships/Starships'
 import PeopleDetail from './Components/PeopleDetail/PeopleDetail'
 import PlanetDetail from './Components/PlanetDetail/PlanetDetail'
+import SpeciesDetail from './Components/SpeciesDetail/SpeciesDetail'
 
 function App() {
   return (
@@ -47,6 +48,9 @@ function App() {
                 </Route>
                 <Route path='/detail/planet'>
                     <PlanetDetail />
+                </Route>
+                <Route path='/detail/species'>
+                    <SpeciesDetail />
                 </Route>
               </Switch>
         </div>

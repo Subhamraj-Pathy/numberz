@@ -125,6 +125,10 @@
   align-items: center;
 }
 
+.cardContent:hover {
+  background-color:teal;
+}
+
 .cardFilm {
   margin-top: 10px;
   margin-bottom: 10px;
