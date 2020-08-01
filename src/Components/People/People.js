@@ -23,7 +23,7 @@ class People extends Component {
 
     render() {
         return (
-            <div>
+            <div className='peopleContainer'>
                 {
                     this.state.people.length <= 0 ?
                         <img src={Loading} />
