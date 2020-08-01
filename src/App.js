@@ -14,6 +14,7 @@ import Starships from './Components/Starships/Starships'
 import PeopleDetail from './Components/PeopleDetail/PeopleDetail'
 import PlanetDetail from './Components/PlanetDetail/PlanetDetail'
 import SpeciesDetail from './Components/SpeciesDetail/SpeciesDetail'
+import VehiclesDetails from './Components/VehiclesDetails/VehiclesDetails'
 
 function App() {
   return (
@@ -51,6 +52,9 @@ function App() {
                 </Route>
                 <Route path='/detail/species'>
                     <SpeciesDetail />
+                </Route>
+                <Route path='/detail/vehicles'>
+                    <VehiclesDetails />
                 </Route>
               </Switch>
         </div>
