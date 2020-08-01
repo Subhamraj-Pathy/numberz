@@ -287,3 +287,50 @@
     justify-content: space-evenly;
   }
 }
+
+.filmDetailsContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filmHeading {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 40px;
+  color: yellow;
+  text-shadow: 1px 1px 20px red;
+  text-align: center;
+  font-family: 'Concert One', cursive;
+}
+
+.filmTitle {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 60px;
+  color: yellow;
+  text-shadow: 1px 1px 20px red;
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.flimInfoContainer {
+  display: flex;
+  margin-top: 20px;
+}
+
+.filmInfo {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 20px;
+  color: yellow;
+  text-shadow: 1px 1px 10px blue;
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+}
+
+
+.videoPlayer {
+  margin-top: 30px;
+}

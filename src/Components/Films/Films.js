@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 import Loading from '../../Assets/loader-gif-3.gif'
 
@@ -32,7 +33,8 @@ class Films extends Component {
                             <div className='peopleContainer'>
                                 {
                                     this.state.films.map((film, i) =>
-                                    <Card key={i} className='cardFilm'>
+                                    <Link key={i} className='detailsLink' to={`/detail/films?film=${film.title}`}>
+                                        <Card key={i} className='cardFilm'>
                                         <CardContent className='cardContent'>
                                             <Typography style={{ textAlign: 'center', marginBottom: '20px', textShadow: '1px 1px orangered', cursor: 'pointer' }} variant='h4' component='h1'>
                                                 {film.title}
@@ -45,6 +47,7 @@ class Films extends Component {
                                             </div>
                                         </CardContent>
                                     </Card>
+                                    </Link>  
                                 )
                                 }
                             </div>
