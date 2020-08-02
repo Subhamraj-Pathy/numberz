@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import TrendingFlatIcon from '@material-ui/icons/TrendingFlat';
 
 import Alderaan from '../../Assets/Planets/Alderaan-min.jpg'
 import Bespin from '../../Assets/Planets/Bespin-min.jpg'
@@ -100,7 +101,7 @@ class PlanetDetail extends Component {
                         </div>
                 }
 
-                <Link className='detailsLink' to='/planets' style={{color: 'white', fontSize: '20px', fontWeight: 'bold'}}>Back</Link>
+                <Link className='detailsLink' to='/planets' style={{color: 'yellow'}}><span style={{fontSize: '60px'}}><TrendingFlatIcon className='backIcon' fontSize='inherit' /></span></Link>
             </div>
         );
     }

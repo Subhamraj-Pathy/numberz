@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 
+import TrendingFlatIcon from '@material-ui/icons/TrendingFlat';
+
 import LukeSkywalker from '../../Assets/People/Luke Skywalker-min.jpg'
 import Beru from '../../Assets/People/Beru Whitesun lars-min.jpg'
 import Biggs from '../../Assets/People/Biggs Darklighter-min.jpg'
@@ -77,7 +79,7 @@ class PeopleDetail extends Component {
         })
         this.setState({
             imageURL: this.state.images.filter(image => image.name === this.state.person.name)[0].img,
-            homeWorld: (await axios.get(this.state.person.homeworld)).data.name
+            // homeWorld: (await axios.get(this.state.person.homeworld)).data.name
         })
     }
 
@@ -98,14 +100,14 @@ class PeopleDetail extends Component {
                             <div className='displayDetailsContents'><span style={{ textShadow: '.5px .5px yellow', fontSize: '25px' }}>Character Hair Color:</span> {this.state.person.hair_color}</div>
                             <div className='displayDetailsContents'><span style={{ textShadow: '.5px .5px yellow', fontSize: '25px' }}>Character Skin Color:</span> {this.state.person.skin_color}</div>
                             <div className='displayDetailsContents'><span style={{ textShadow: '.5px .5px yellow', fontSize: '25px' }}>Character Eye Color:</span> {this.state.person.eye_color}</div>
-                            <div className='displayDetailsContents'><span style={{ textShadow: '.5px .5px yellow', fontSize: '25px' }}>Character Home World:</span> {this.state.homeWorld}</div>
+                            {/* <div className='displayDetailsContents'><span style={{ textShadow: '.5px .5px yellow', fontSize: '25px' }}>Character Home World:</span> {this.state.homeWorld}</div> */}
                             <div className='displayDetailsContents'><span style={{ textShadow: '.5px .5px yellow', fontSize: '25px' }}>Film Appearances :</span> {this.state.person.films.length}</div>
                             <div className='displayDetailsContents'><span style={{ textShadow: '.5px .5px yellow', fontSize: '25px' }}>Vehicles Operated :</span> {this.state.person.vehicles.length}</div>
                             <div className='displayDetailsContents'><span style={{ textShadow: '.5px .5px yellow', fontSize: '25px' }}>Startships Operated :</span> {this.state.person.starships.length}</div>
                         </div>
                 }
 
-                <Link className='detailsLink' to='/people' style={{color: 'white', fontSize: '20px', fontWeight: 'bold'}}>Back</Link>
+                <Link className='detailsLink' to='/people' style={{color: 'yellow'}}><span style={{fontSize: '60px'}}><TrendingFlatIcon className='backIcon' fontSize='inherit' /></span></Link>
             </div>
         );
     }

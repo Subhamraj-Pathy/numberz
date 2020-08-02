@@ -34,9 +34,9 @@ class Planets extends Component {
                                 {
                                     this.state.planets.map((planet, i) =>
                                     <Link key={i} className='detailsLink' to={`/detail/planet?planet=${planet.name}`}>
-                                        <Card className='cardPlanet'>
+                                        <Card className='card' style={{height:'200px'}}>
                                             <CardContent className='cardContent'>
-                                                <Typography style={{ textAlign: 'center', marginBottom: '20px', textShadow: '1px 1px orangered', cursor: 'pointer' }} variant='h4' component='h1'>
+                                                <Typography className='cardHeading' variant='h4' component='h1'>
                                                     {planet.name}
                                         </Typography>
                                                 <div className='cardContentRowAlign'>

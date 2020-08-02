@@ -34,9 +34,9 @@ class People extends Component {
                                 {
                                     this.state.people.map((person, i) =>
                                     <Link key={i} className='detailsLink' to={`/detail/person?person=${person.name}`}>
-                                        <Card className='cardPeople'>
+                                        <Card className='card'>
                                             <CardContent className='cardContent'>
-                                                <Typography style={{ textAlign: 'center', marginBottom: '20px', textShadow: '1px 1px orangered', cursor: 'pointer' }} variant='h4' component='h1'>
+                                                <Typography className='cardHeading' variant='h4' component='h1'>
                                                     {person.name}
                                                 </Typography>
                                                 <div className='cardContentRowAlign'>

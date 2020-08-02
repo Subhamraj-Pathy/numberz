@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 
+import TrendingFlatIcon from '@material-ui/icons/TrendingFlat';
+
 import ReactPlayer from 'react-player/youtube'
 
 class FilmsDetails extends Component {
@@ -34,7 +36,6 @@ class FilmsDetails extends Component {
             }
         ],
         film : [], 
-        characters: [],
         trailerURL: '',
         deviceWidth: window.innerWidth
     }
@@ -48,15 +49,10 @@ class FilmsDetails extends Component {
         const response = await axios.get('https://swapi.dev/api/films/')
         const fetchedFilm = response.data.results.filter(p => p.title === filmTitle)
         this.setState({
-            film: fetchedFilm[0]
-        })
-        fetchedFilm[0].characters.map(async  element => {
-            const resp = await axios.get(element)
-            this.setState({
-                characters: [...this.state.characters, resp.data.name],
-                trailerURL: url
-            })
-        }); 
+            film: fetchedFilm[0],
+            trailerURL: url
+        }) 
+
     }
 
     render() {
@@ -69,8 +65,8 @@ class FilmsDetails extends Component {
                     <div className ='filmInfo'> <b>Producer:</b> {this.state.film.producer}</div>
                     <div className ='filmInfo'> <b>Release Date:</b> {this.state.film.release_date}</div>
                 </div>
-                <ReactPlayer className='videoPlayer' controls='true'url={this.state.trailerURL} width={ this .state.deviceWidth >= 1024 ? '60vw' : '90vw'}  height={ this .state.deviceWidth >= 1024 ? '25vw' : '50vw'}/><br />
-                <Link className='detailsLink' to='/films' style={{color: 'white', fontSize: '20px', fontWeight: 'bold'}}>Back</Link><br />
+                <ReactPlayer className='videoPlayer' controls='true' url={this.state.trailerURL} width={ this .state.deviceWidth >= 1024 ? '60vw' : '90vw'}  height={ this .state.deviceWidth >= 1024 ? '25vw' : '50vw'}/><br />
+                <Link className='detailsLink' to='/films' style={{color: 'yellow'}}><span style={{fontSize: '60px'}}><TrendingFlatIcon className='backIcon' fontSize='inherit' /></span></Link><br />
             </div>
         );
     }

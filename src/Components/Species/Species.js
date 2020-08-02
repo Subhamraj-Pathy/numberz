@@ -34,9 +34,9 @@ class Species extends Component {
                                 {
                                     this.state.species.map((species, i) =>
                                     <Link key={i} className='detailsLink' to={`/detail/species?species=${species.name}`}>
-                                        <Card key={i} className='cardSpecies'>
+                                        <Card key={i} className='card' style={{height:'180px'}}>
                                             <CardContent className='cardContent'>
-                                                <Typography style={{ textAlign: 'center', marginBottom: '20px', textShadow: '1px 1px orangered', cursor: 'pointer' }} variant='h4' component='h1'>
+                                                <Typography className='cardHeading' variant='h4' component='h1'>
                                                     {species.name}
                                                 </Typography>
                                                 <div className='cardContentRowAlign'>

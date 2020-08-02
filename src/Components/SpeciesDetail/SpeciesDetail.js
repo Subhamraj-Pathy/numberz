@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import TrendingFlatIcon from '@material-ui/icons/TrendingFlat';
 
 import Droid from '../../Assets/Species/Droid-min.png'
 import Ewok from '../../Assets/Species/Ewok-min.jpg'
@@ -100,7 +101,7 @@ class SpeciesDetail extends Component {
                         </div>
                 }
 
-                <Link className='detailsLink' to='/species' style={{color: 'white', fontSize: '20px', fontWeight: 'bold'}}>Back</Link>
+                <Link className='detailsLink' to='/species' style={{color: 'yellow'}}><span style={{fontSize: '60px'}}><TrendingFlatIcon className='backIcon' fontSize='inherit' /></span></Link>
             </div>
         );
     }

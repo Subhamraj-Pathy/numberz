@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import TrendingFlatIcon from '@material-ui/icons/TrendingFlat';
 
 import ATAT from '../../Assets/Vehicles/AT-AT.webp'
 import ATST from '../../Assets/Vehicles/AT-ST.webp'
@@ -101,7 +102,7 @@ class VehiclesDetails extends Component {
                         </div>
                 }
 
-                <Link className='detailsLink' to='/vehicles' style={{color: 'white', fontSize: '20px', fontWeight: 'bold'}}>Back</Link>
+                <Link className='detailsLink' to='/vehicles' style={{color: 'yellow'}}><span style={{fontSize: '60px'}}><TrendingFlatIcon className='backIcon' fontSize='inherit' /></span></Link>
             </div>
         );
     }

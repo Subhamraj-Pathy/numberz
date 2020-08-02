@@ -34,9 +34,9 @@ class Films extends Component {
                                 {
                                     this.state.films.map((film, i) =>
                                     <Link key={i} className='detailsLink' to={`/detail/films?film=${film.title}`}>
-                                        <Card key={i} className='cardFilm'>
+                                        <Card key={i} className='card' style={{height:'450px'}}>
                                         <CardContent className='cardContent'>
-                                            <Typography style={{ textAlign: 'center', marginBottom: '20px', textShadow: '1px 1px orangered', cursor: 'pointer' }} variant='h4' component='h1'>
+                                            <Typography className='cardHeading' variant='h4' component='h1'>
                                                 {film.title}
                                             </Typography>
                                             <div className='cardContentRowAlign'>

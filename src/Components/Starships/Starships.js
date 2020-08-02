@@ -34,9 +34,9 @@ class Starships extends Component {
                                 {
                                     this.state.starships.map((starship, i) =>
                                     <Link key={i} className='detailsLink' to={`/detail/starships?starship=${starship.name}`}>
-                                        <Card className='cardStarship'>
+                                        <Card className='card' style={{height:'250px'}}>
                                             <CardContent className='cardContent'>
-                                                <Typography style={{ textAlign: 'center', marginBottom: '20px', textShadow: '1px 1px orangered', cursor: 'pointer' }} variant='h4' component='h1'>
+                                                <Typography className='cardHeading' variant='h4' component='h1'>
                                                     {starship.name}
                                                 </Typography>
                                                 <div className='cardContentRowAlign'>
