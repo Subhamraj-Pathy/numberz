@@ -11,14 +11,38 @@ import Typography from '@material-ui/core/Typography';
 class Planets extends Component {
     
     state = {
-        planets: []
+        planets: [],
+        searchParam: '',
+        display: []
     }
 
     async componentDidMount() {
         const response = await axios.get('https://swapi.dev/api/planets/')
         this.setState({
-            planets: response.data.results
+            planets: response.data.results,
+            display: response.data.results
         })
+    }
+
+    handleSearch = (e) => {
+        const searchParamLength = e.target.value.length
+
+        this.setState({
+            searchParam: e.target.value
+        })
+        
+        if(searchParamLength <= 0) {
+            this.setState({
+                display: this.state.planets
+            })
+        }
+        else {
+            const match = e.target.value.toLocaleLowerCase()
+            const filtered = this.state.planets.filter(p => p.name.substring(0, searchParamLength).toLowerCase() === match)
+            this.setState({
+                display: filtered
+            })
+        }
     }
 
     render() {
@@ -30,9 +54,10 @@ class Planets extends Component {
                         :
                         <div>
                             <div className='titleHeading'>Planets</div>
+                            <div className='searchBox'> <input className='searchInput' type='text' placeholder='Search' value={this.state.searchParam} onChange={(e) => this.handleSearch(e)} /> </div>
                             <div className='peopleContainer'>
                                 {
-                                    this.state.planets.map((planet, i) =>
+                                    this.state.display.map((planet, i) =>
                                     <Link key={i} className='detailsLink' to={`/detail/planet?planet=${planet.name}`}>
                                         <Card className='card' style={{height:'200px'}}>
                                             <CardContent className='cardContent'>
