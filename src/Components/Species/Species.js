@@ -53,7 +53,7 @@ class Species extends Component {
                         <img src={Loading} />
                         :
                         <div>
-                            <div className='titleHeading'>Species</div><div className='searchBox'> <input className='searchInput' type='text' placeholder='Search' value={this.state.searchParam} onChange={(e) => this.handleSearch(e)} /> </div>
+                            <div className='titleHeading'>Species</div><div className='searchBox'> <input className='searchInput' type='text' placeholder='&#128269; Search' value={this.state.searchParam} onChange={(e) => this.handleSearch(e)} /> </div>
                             
                             <div className='peopleContainer'>
                                 {
