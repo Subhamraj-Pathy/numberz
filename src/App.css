@@ -114,8 +114,6 @@
 
 .peopleContainer {
   margin-top: 30px;
-  margin-left: 5vw;
-  margin-right: 5vw;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -141,11 +139,13 @@
 .card {
   margin-top: 10px;
   margin-bottom: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
   width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: 6px solid rgba(255, 68, 0, 0.925);
+  border-bottom: 6px solid red;
 }
 
 @media screen and (max-width: 1024px) {
@@ -182,7 +182,7 @@
 .personDetails {
   height: calc(100vh - 90px);
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center;
   justify-content: space-evenly;
 }
@@ -296,4 +296,27 @@
 
 .videoPlayer {
   margin-top: 50px;
+}
+
+.searchBox {
+  text-align: center;
+}
+
+.searchInput {
+  width: 300px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid white;
+  padding-left: 10px;
+  color: white;
+  border-radius: 10px;
+}
+
+.searchInput:hover {
+  border: 2px solid red;
+}
+
+.searchInput:focus {
+  border: 2px solid red;
+  outline: none;
 }

@@ -65,7 +65,7 @@ class FilmsDetails extends Component {
                     <div className ='filmInfo'> <b>Producer:</b> {this.state.film.producer}</div>
                     <div className ='filmInfo'> <b>Release Date:</b> {this.state.film.release_date}</div>
                 </div>
-                <ReactPlayer className='videoPlayer' controls='true' url={this.state.trailerURL} width={ this .state.deviceWidth >= 1024 ? '60vw' : '90vw'}  height={ this .state.deviceWidth >= 1024 ? '25vw' : '50vw'}/><br />
+                <ReactPlayer className='videoPlayer' controls={true} url={this.state.trailerURL} width={ this .state.deviceWidth >= 1024 ? '60vw' : '90vw'}  height={ this .state.deviceWidth >= 1024 ? '25vw' : '50vw'}/><br />
                 <Link className='detailsLink' to='/films' style={{color: 'yellow'}}><span style={{fontSize: '60px'}}><TrendingFlatIcon className='backIcon' fontSize='inherit' /></span></Link><br />
             </div>
         );
