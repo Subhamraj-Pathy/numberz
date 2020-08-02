@@ -34,7 +34,7 @@ class Films extends Component {
                                 {
                                     this.state.films.map((film, i) =>
                                     <Link key={i} className='detailsLink' to={`/detail/films?film=${film.title}`}>
-                                        <Card key={i} className='card' style={{height:'450px'}}>
+                                        <Card key={i} className='cardFilm' style={{height:'450px'}}>
                                         <CardContent className='cardContent'>
                                             <Typography className='cardHeading' variant='h4' component='h1'>
                                                 {film.title}
