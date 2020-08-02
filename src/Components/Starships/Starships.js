@@ -11,14 +11,38 @@ import Typography from '@material-ui/core/Typography';
 class Starships extends Component {
 
     state = {
-        starships: []
+        starships: [],
+        searchParam: '',
+        display: []
     }
 
     async componentDidMount() {
         const response = await axios.get('https://swapi.dev/api/starships/')
         this.setState({
-            starships: response.data.results
+            starships: response.data.results,
+            display: response.data.results
         })
+    }
+
+    handleSearch = (e) => {
+        const searchParamLength = e.target.value.length
+
+        this.setState({
+            searchParam: e.target.value
+        })
+        
+        if(searchParamLength <= 0) {
+            this.setState({
+                display: this.state.starships
+            })
+        }
+        else {
+            const match = e.target.value.toLocaleLowerCase()
+            const filtered = this.state.starships.filter(p => p.name.substring(0, searchParamLength).toLowerCase() === match)
+            this.setState({
+                display: filtered
+            })
+        }
     }
 
     render() {
@@ -30,9 +54,11 @@ class Starships extends Component {
                         :
                         <div>
                             <div className='titleHeading'>Starships</div>
+                            <div className='searchBox'> <input className='searchInput' type='text' placeholder='Search' value={this.state.searchParam} onChange={(e) => this.handleSearch(e)} /> </div>
+                            
                             <div className='peopleContainer'>
                                 {
-                                    this.state.starships.map((starship, i) =>
+                                    this.state.display.map((starship, i) =>
                                     <Link key={i} className='detailsLink' to={`/detail/starships?starship=${starship.name}`}>
                                         <Card className='card' style={{height:'250px'}}>
                                             <CardContent className='cardContent'>

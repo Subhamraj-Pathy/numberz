@@ -11,14 +11,38 @@ import Typography from '@material-ui/core/Typography';
 class Species extends Component {
 
     state = {
-        species: []
+        species: [],
+        searchParam: '',
+        display: []
     }
 
     async componentDidMount() {
         const response = await axios.get('https://swapi.dev/api/species/')
         this.setState({
-            species: response.data.results
+            species: response.data.results,
+            display: response.data.results
         })
+    }
+
+    handleSearch = (e) => {
+        const searchParamLength = e.target.value.length
+
+        this.setState({
+            searchParam: e.target.value
+        })
+        
+        if(searchParamLength <= 0) {
+            this.setState({
+                display: this.state.species
+            })
+        }
+        else {
+            const match = e.target.value.toLocaleLowerCase()
+            const filtered = this.state.species.filter(p => p.name.substring(0, searchParamLength).toLowerCase() === match)
+            this.setState({
+                display: filtered
+            })
+        }
     }
 
     render() {
@@ -29,10 +53,11 @@ class Species extends Component {
                         <img src={Loading} />
                         :
                         <div>
-                            <div className='titleHeading'>Species</div>
+                            <div className='titleHeading'>Species</div><div className='searchBox'> <input className='searchInput' type='text' placeholder='Search' value={this.state.searchParam} onChange={(e) => this.handleSearch(e)} /> </div>
+                            
                             <div className='peopleContainer'>
                                 {
-                                    this.state.species.map((species, i) =>
+                                    this.state.display.map((species, i) =>
                                     <Link key={i} className='detailsLink' to={`/detail/species?species=${species.name}`}>
                                         <Card key={i} className='card' style={{height:'180px'}}>
                                             <CardContent className='cardContent'>

@@ -11,14 +11,38 @@ import Typography from '@material-ui/core/Typography';
 class Vehicles extends Component {
 
     state = {
-        vehicles: []
+        vehicles: [],
+        searchParam: '',
+        display: []
     }
 
     async componentDidMount() {
         const response = await axios.get('https://swapi.dev/api/vehicles/')
         this.setState({
-            vehicles: response.data.results
+            vehicles: response.data.results,
+            display: response.data.results
         })
+    }
+
+    handleSearch = (e) => {
+        const searchParamLength = e.target.value.length
+
+        this.setState({
+            searchParam: e.target.value
+        })
+        
+        if(searchParamLength <= 0) {
+            this.setState({
+                display: this.state.vehicles
+            })
+        }
+        else {
+            const match = e.target.value.toLocaleLowerCase()
+            const filtered = this.state.vehicles.filter(p => p.name.substring(0, searchParamLength).toLowerCase() === match)
+            this.setState({
+                display: filtered
+            })
+        }
     }
 
     render() {
@@ -30,9 +54,11 @@ class Vehicles extends Component {
                         :
                         <div>
                             <div className='titleHeading'>Vehicles</div>
+                            <div className='searchBox'> <input className='searchInput' type='text' placeholder='Search' value={this.state.searchParam} onChange={(e) => this.handleSearch(e)} /> </div>
+                            
                             <div className='peopleContainer'>
                                 {
-                                    this.state.vehicles.map((vehicle, i) =>
+                                    this.state.display.map((vehicle, i) =>
                                     <Link key={i} className='detailsLink' to={`/detail/vehicles?vehicle=${vehicle.name}`}>
                                         <Card className='card' style={{height:'200px'}}>
                                             <CardContent className='cardContent'>
