@@ -4,6 +4,7 @@ import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 import Navbar from './Components/Navbar/Navbar'
+import Footer from './Components/Footer/Footer'
 import Home from './Components/Home/Home'
 import People from './Components/People/People'
 import Planets from './Components/Planets/Planets'
@@ -66,6 +67,7 @@ function App() {
                 </Route>
               </Switch>
         </div>
+        <Footer />
     </div>
     </Router>
   );
