@@ -36,8 +36,8 @@ const Home = () => {
                 {insiderArray[index]}
             </div>
             <div className='arrowHandlers'>
-                <span style={ index === 0 ? {color: 'grey'} : {color: 'blue', cursor: 'pointer'}} onClick={handleBack}><ArrowBackIosIcon fontSize='large' color='inherit' /></span>
-                <span style={ index === 7 ? {color: 'grey'} : {color: 'blue', cursor: 'pointer'}} onClick={handleFont}><ArrowForwardIosIcon fontSize='large' color='inherit' /></span>
+                <span className='navigators' style={ index === 0 ? {color: 'grey'} : {color: 'rgba(38, 0, 255, 0.6)'}} onClick={handleBack}><ArrowBackIosIcon fontSize='large' color='inherit' /></span>
+                <span className='navigators' style={ index === 7 ? {color: 'grey'} : {color: 'rgba(38, 0, 255, 0.6)'}} onClick={handleFont}><ArrowForwardIosIcon fontSize='large' color='inherit' /></span>
             </div>
         </div>
     );

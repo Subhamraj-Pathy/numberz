@@ -17,6 +17,7 @@ const Footer = () => {
                 <a href='https://twitter.com/starwars' target='_blank' className='footerIconLinks'><TwitterIcon color='inherit' fontSize='inherit' /></a>
                 <a href='https://www.youtube.com/user/starwars' target='_blank' className='footerIconLinks'><YouTubeIcon color='inherit' fontSize='inherit' /></a>
             </div>
+            <div className='signature'>Made By <a className='signatureLink' href='https://subhamrajpathy.netlify.app/' target='_blank'>Subhamraj Pathy</a></div>
         </div>
     );
 };

@@ -1,9 +1,7 @@
 .App {
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100vw;
-  
+  background-color: rgba(0, 0, 0, 0.5);  
 }
 
 .viewPort {
@@ -84,6 +82,22 @@
   color: rgb(155, 155, 155);
 }
 
+.signature {
+  color: rgb(95, 95, 95);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: 'Concert One', cursive;
+}
+
+.signatureLink {
+  text-decoration: none;
+  color: rgba(255, 255, 0, 0.459);
+}
+
+.signatureLink:hover {
+  color: rgba(255, 255, 0, 0.651);
+}
+
 @media screen and (max-width: 1024px) {
 
   .navLinks {
@@ -146,9 +160,8 @@
   text-justify: inter-word;
   line-height: 50px;
   font-size: 30px;
-  border: 1px solid yellow;
   padding: 20px 20px 20px 20px;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 2px 2px 20px white;
 }
 
@@ -166,6 +179,10 @@
   margin-top: 30px;
   margin-bottom: 20px;
   width: 300px;
+}
+
+.navigators {
+  cursor: pointer;
 }
 
 .titleHeading {
