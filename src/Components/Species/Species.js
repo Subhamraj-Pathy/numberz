@@ -25,7 +25,8 @@ class Species extends Component {
     }
 
     handleSearch = (e) => {
-        const searchParamLength = e.target.value.length
+        const match = e.target.value.toLocaleLowerCase().trim()
+        const searchParamLength = match.length
 
         this.setState({
             searchParam: e.target.value
@@ -37,7 +38,6 @@ class Species extends Component {
             })
         }
         else {
-            const match = e.target.value.toLocaleLowerCase()
             const filtered = this.state.species.filter(p => p.name.substring(0, searchParamLength).toLowerCase() === match)
             this.setState({
                 display: filtered
@@ -57,6 +57,7 @@ class Species extends Component {
                             
                             <div className='peopleContainer'>
                                 {
+                                    this.state.display.length !== 0 ?
                                     this.state.display.map((species, i) =>
                                     <Link key={i} className='detailsLink' to={`/detail/species?species=${species.name}`}>
                                         <Card key={i} className='card' style={{height:'180px'}}>
@@ -78,6 +79,8 @@ class Species extends Component {
                                     </Link>
                                         
                                     )
+                                    : 
+                                <div style={{color: 'white'}}>No Results Found</div>
                                 }
                             </div>
                         </div>

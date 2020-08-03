@@ -25,7 +25,8 @@ class Planets extends Component {
     }
 
     handleSearch = (e) => {
-        const searchParamLength = e.target.value.length
+        const match = e.target.value.toLocaleLowerCase().trim()
+        const searchParamLength = match.length
 
         this.setState({
             searchParam: e.target.value
@@ -37,7 +38,6 @@ class Planets extends Component {
             })
         }
         else {
-            const match = e.target.value.toLocaleLowerCase()
             const filtered = this.state.planets.filter(p => p.name.substring(0, searchParamLength).toLowerCase() === match)
             this.setState({
                 display: filtered
@@ -57,6 +57,7 @@ class Planets extends Component {
                             <div className='searchBox'> <input className='searchInput' type='text' placeholder='&#128269; Search' value={this.state.searchParam} onChange={(e) => this.handleSearch(e)} /> </div>
                             <div className='peopleContainer'>
                                 {
+                                    this.state.display.length !== 0 ?
                                     this.state.display.map((planet, i) =>
                                     <Link key={i} className='detailsLink' to={`/detail/planet?planet=${planet.name}`}>
                                         <Card className='card' style={{height:'200px'}}>
@@ -80,6 +81,8 @@ class Planets extends Component {
                                         </Card>
                                     </Link>
                                     )
+                                    : 
+                                <div style={{color: 'white'}}>No Results Found</div>
                                 }
                             </div>
                         </div>

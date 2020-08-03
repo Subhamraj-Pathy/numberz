@@ -51,8 +51,10 @@
 }
 
 .footer {
+  margin-top: 40px;
   background-color: rgba(75, 75, 75, 0.2);
   width: 100%;
+  border-top: 1px solid rgba(75, 75, 75, 0.658);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,8 +76,8 @@
 .footerIconLinks {
   color: rgb(95, 95, 95);
   font-size: 30px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .footerIconLinks:hover {
@@ -139,17 +141,21 @@
   width: 60vw;
   margin-top: 30px;
   color: antiquewhite;
-  font-family: 'Varela Round', sans-serif;
+  font-family: 'Concert One', cursive;
   text-align: justify;
+  text-justify: inter-word;
+  line-height: 50px;
   font-size: 30px;
   border: 1px solid yellow;
-  padding: 15px 15px 15px 15px;
+  padding: 20px 20px 20px 20px;
   border-radius: 10px;
+  box-shadow: 2px 2px 20px white;
 }
 
 @media screen and (max-width: 1024px) {
   .insiderText {
     width: 80vw;
+    line-height: 35px;
   }
 }
 

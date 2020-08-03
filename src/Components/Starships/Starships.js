@@ -25,7 +25,8 @@ class Starships extends Component {
     }
 
     handleSearch = (e) => {
-        const searchParamLength = e.target.value.length
+        const match = e.target.value.toLocaleLowerCase().trim()
+        const searchParamLength = match.length
 
         this.setState({
             searchParam: e.target.value
@@ -37,7 +38,6 @@ class Starships extends Component {
             })
         }
         else {
-            const match = e.target.value.toLocaleLowerCase()
             const filtered = this.state.starships.filter(p => p.name.substring(0, searchParamLength).toLowerCase() === match)
             this.setState({
                 display: filtered
@@ -58,6 +58,7 @@ class Starships extends Component {
                             
                             <div className='peopleContainer'>
                                 {
+                                    this.state.display.length !== 0 ?
                                     this.state.display.map((starship, i) =>
                                     <Link key={i} className='detailsLink' to={`/detail/starships?starship=${starship.name}`}>
                                         <Card className='card' style={{height:'250px'}}>
@@ -79,6 +80,8 @@ class Starships extends Component {
                                     </Link>
                                         
                                     )
+                                    : 
+                                <div style={{color: 'white'}}>No Results Found</div>
                                 }
                             </div>
                         </div>

@@ -25,7 +25,8 @@ class People extends Component {
     }
 
     handleSearch = (e) => {
-        const searchParamLength = e.target.value.length
+        const match = e.target.value.toLocaleLowerCase().trim()
+        const searchParamLength = match.length
 
         this.setState({
             searchParam: e.target.value
@@ -37,7 +38,7 @@ class People extends Component {
             })
         }
         else {
-            const match = e.target.value.toLocaleLowerCase()
+            
             const filteredPeople = this.state.people.filter(p => p.name.substring(0, searchParamLength).toLowerCase() === match)
             this.setState({
                 peopleDisplay: filteredPeople
@@ -56,7 +57,9 @@ class People extends Component {
                             <div className='titleHeading'>People</div>
                             <div className='searchBox'> <input className='searchInput' type='text' placeholder='&#128269; Search' value={this.state.searchParam} onChange={(e) => this.handleSearch(e)} /> </div>
                             <div className='peopleContainer'>
-                                {
+                                {   
+                                    this.state.peopleDisplay.length !== 0 ? 
+
                                     this.state.peopleDisplay.map((person, i) =>
                                     <Link key={i} className='detailsLink' to={`/detail/person?person=${person.name}`}>
                                         <Card className='card'>
@@ -85,6 +88,8 @@ class People extends Component {
                                         </Card>
                                     </Link>
                                 )
+                                : 
+                                <div style={{color: 'white'}}>No Results Found</div>
                                 }
                             </div>
                         </div>

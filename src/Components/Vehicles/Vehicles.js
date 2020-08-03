@@ -25,7 +25,8 @@ class Vehicles extends Component {
     }
 
     handleSearch = (e) => {
-        const searchParamLength = e.target.value.length
+        const match = e.target.value.toLocaleLowerCase().trim()
+        const searchParamLength = match.length
 
         this.setState({
             searchParam: e.target.value
@@ -37,7 +38,6 @@ class Vehicles extends Component {
             })
         }
         else {
-            const match = e.target.value.toLocaleLowerCase()
             const filtered = this.state.vehicles.filter(p => p.name.substring(0, searchParamLength).toLowerCase() === match)
             this.setState({
                 display: filtered
@@ -58,6 +58,7 @@ class Vehicles extends Component {
                             
                             <div className='peopleContainer'>
                                 {
+                                    this.state.display.length !== 0 ?
                                     this.state.display.map((vehicle, i) =>
                                     <Link key={i} className='detailsLink' to={`/detail/vehicles?vehicle=${vehicle.name}`}>
                                         <Card className='card' style={{height:'200px'}}>
@@ -79,6 +80,8 @@ class Vehicles extends Component {
                                     </Link>
                                         
                                     )
+                                    : 
+                                <div style={{color: 'white'}}>No Results Found</div>
                                 }
                             </div>
                         </div>

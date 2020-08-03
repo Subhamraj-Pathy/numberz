@@ -38,7 +38,7 @@ class Films extends Component {
                                         <CardContent className='cardContent'>
                                             <Typography className='cardHeading' variant='h4' component='h1'>
                                                 {film.title}
-                                            </Typography>
+                                            </Typography><br />
                                             <div className='cardContentRowAlign'>
                                                 <Typography className='typography'><b>Episode:</b> {film.episode_id}</Typography>
                                             </div>
